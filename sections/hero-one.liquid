@@ -1,10 +1,27 @@
-<div class="hero hero1 hero1--aligned-center"><img
-    src="https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-    class="hero1__bg">
+<div class="hero hero1 hero1--aligned-{{ section.settings.info_alignment }}">
+    {%- if section.settings.image != blank -%}
+    <img
+      srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | img_url: '165x' }} 165w,{%- endif -%}
+        {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | img_url: '360x' }} 360w,{%- endif -%}
+        {%- if section.settings.image.width >= 535 -%}{{ section.settings.image | img_url: '535x' }} 535w,{%- endif -%}
+        {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | img_url: '750x' }} 750w,{%- endif -%}
+        {%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | img_url: '1070x' }} 1070w,{%- endif -%}
+        {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | img_url: '1500x' }} 1500w,{%- endif -%}"
+      src="{{ section.settings.image | img_url: '1500x' }}"
+      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+      alt="{{ section.settings.image.alt | escape }}"
+      loading="lazy" 
+      width="{{ section.settings.image.width }}"
+      height="{{ section.settings.image.height }}"
+      class="hero1__bg">
+    {%- else -%}
+    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
   <div class="hero1__content-container">
     <div class="hero1__info">
       <h1 class="hero1__title">Pilot</h1>
-      <p class="hero1__paragraph">Hero1 Lorem ipsum dolor
+      <p class="hero1__paragraph">
+        Hero1 Lorem ipsum dolor
         sit amet consectetur adipisicing elit. Magnam
         exercitationem quia blanditiis assumenda voluptatum
         sequi iusto ducimus vero omnis quaerat?</p><a
@@ -12,8 +29,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 
@@ -84,69 +99,35 @@
     "default": "Title"
     },
     {
-      "type": "select",
-      "id": "height",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.image-with-text.settings.height.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.image-with-text.settings.height.options__2.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.image-with-text.settings.height.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.image-with-text.settings.height.label"
+    "type": "textarea",
+    "id": "paragraph",
+    "label": "Paragraph",
+    "default": "Example: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus aliquid maiores dignissimos ullam illo modi."  
     },
+    {  
+    "type": "url",
+    "id": "button_link",
+    "label": "View More"
+    },  
     {
       "type": "select",
-      "id": "color_scheme",
+      "id": "info_alignment",
       "options": [
         {
-          "value": "background-1",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__1.label"
+          "value": "left",
+          "label": "Left"
         },
         {
-          "value": "background-2",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__2.label"
+          "value": "center",
+          "label": "Center"
         },
         {
-          "value": "inverse",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__3.label"
-        },
-        {
-          "value": "accent-1",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__4.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__5.label"
+          "value": "right",
+          "label": "Right"
         }
       ],
-      "default": "background-1",
-      "label": "t:sections.image-with-text.settings.color_scheme.label"
-    },
-    {
-      "type": "select",
-      "id": "layout",
-      "options": [
-        {
-          "value": "image_first",
-          "label": "t:sections.image-with-text.settings.layout.options__1.label"
-        },
-        {
-          "value": "text_first",
-          "label": "t:sections.image-with-text.settings.layout.options__2.label"
-        }
-      ],
-      "default": "image_first",
-      "label": "t:sections.image-with-text.settings.layout.label",
-      "info": "t:sections.image-with-text.settings.layout.info"
+      "default": "center",
+      "label": "Info Alignment"
     }
   ],
   "blocks": [

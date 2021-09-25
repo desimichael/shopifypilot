@@ -307,6 +307,8 @@ table {
 	font-weight: 500;
 }
 .header3__collections-nav {
+	display: -moz-box;
+	display: flex;
 	margin-bottom: 0;
 	padding-left: 0;
 }

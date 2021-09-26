@@ -45,101 +45,112 @@
 
 {% schema %}
 {
-	"name": "Hero One",
-	"class": "spaced-section spaced-section--full-width",
-	"settings": [{
-			"type": "image_picker",
-			"id": "image",
-			"label": "t:sections.image-with-text.settings.image.label"
-		},
-		{
-			"type": "color",
-			"id": "background",
-			"label": "Background",
-			"default": "#000000"
-		},
-		{
-			"type": "range",
-			"id": "opacity",
-			"min": 0,
-			"max": 100,
-			"step": 1,
-			"label": "Opacity",
-			"default": 50
-		},
-		{
-			"type": "select",
-			"id": "info_alignment",
-			"options": [{
-					"value": "left",
-					"label": "Left"
-				},
-				{
-					"value": "center",
-					"label": "Center"
-				},
-				{
-					"value": "right",
-					"label": "Right"
-				}
-			],
-			"default": "center",
-			"label": "Info Alignment"
-		}
-	],
-	"blocks": [{
-			"type": "heading",
-			"name": "t:sections.image-with-text.blocks.heading.name",
-			"limit": 1,
-			"settings": [{
-				"type": "text",
-				"id": "title",
-				"label": "Title",
-				"default": "Title"
-			}]
-		},
-		{
-			"type": "paragraph",
-			"name": "Paragraph",
-			"limit": 1,
-			"settings": [{
-				"type": "textarea",
-				"id": "paragraph",
-				"label": "Paragraph",
-				"default": "Example: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus aliquid maiores dignissimos ullam illo modi."
-			}]
-		},
-		{
-			"type": "button",
-			"name": "t:sections.image-with-text.blocks.button.name",
-			"limit": 1,
-			"settings": [{
-					"type": "text",
-					"id": "button_label",
-					"default": "Button label",
-					"label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
-					"info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
-				},
-				{
-					"type": "url",
-					"id": "button_link",
-					"label": "Link"
-				}
-			]
-		}
-	],
-	"presets": [{
-		"name": "Hero one",
-		"blocks": [{
-				"type": "heading"
-			},
-			{
-				"type": "paragraph"
-			},
-			{
-				"type": "button"
-			}
-		]
-	}]
+  "name": "Hero One",
+  "class": "spaced-section spaced-section--full-width",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Opacity",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "info_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Info Alignment"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.image-with-text.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Title"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "name": "Paragraph",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "paragraph",
+          "label": "Paragraph",
+          "default": "Example: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus aliquid maiores dignissimos ullam illo modi."
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.image-with-text.blocks.button.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Button label",
+          "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+          "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero One",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "paragraph"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

@@ -1,4 +1,4 @@
-<div class="hero hero2">
+<div class="hero hero2 hero2--{{ section.settings.hero_height }}">
 	<div class="hero2__collection1">
 		{%- if section.settings.image1 != blank -%}
 		<img srcset="{%- if section.settings.image1.width >= 165 -%}{{ section.settings.image1 | img_url: '165x' }} 165w,{%- endif -%}
@@ -14,7 +14,7 @@
 			height="{{ section.settings.image1.height }}"
 			class="hero2__bg">
 		{%- else -%}
-		{{ 'image1' | placeholder_svg_tag: 'placeholder-svg' }}
+		{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
 		{%- endif -%}
 
 		{% assign opacity1 = section.settings.opacity1 | divided_by: 100.00 %}
@@ -43,7 +43,7 @@
 			height="{{ section.settings.image2.height }}"
 			class="hero2__bg">
 		{%- else -%}
-		{{ 'image2' | placeholder_svg_tag: 'placeholder-svg' }}
+		{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
 		{%- endif -%}
 
 		{% assign opacity2 = section.settings.opacity2 | divided_by: 100.00 %}
@@ -64,6 +64,30 @@
 	"name": "Hero Two",
 	"class": "spaced-section spaced-section--full-width",
 	"settings": [
+		{
+      "type": "select",
+      "id": "hero_height",
+      "options": [
+        {
+          "value": "25vh",
+          "label": "25%"
+        },
+        {
+          "value": "50vh",
+          "label": "50%"
+        },
+        {
+          "value": "75vh",
+          "label": "75%"
+        },
+        {
+          "value": "100vh",
+          "label": "100%"
+        }
+      ],
+      "default": "100vh",
+      "label": "Hero Height"
+    },
 		{
 			"type": "image_picker",
 			"id": "image1",

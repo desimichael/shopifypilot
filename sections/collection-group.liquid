@@ -1,60 +1,50 @@
 <div class="collection collection1">
   <div class="container">
     <div class="row">
+      {%- for product in
+      section.settings.collection.products
+      limit: 6 -%}
       <div class="col-md-4">
         <div class="collection1__collection-item">
           <div class="collection1__product-img">
-            <div class="collection1__heart"><i
-                class="far fa-heart"></i></div><img
-              src="https://www.pngkey.com/png/full/134-1346637_classic-rose-gold-watch-radley-watch-rose-gold.png"
-              alt="product1">
+            <div class="collection1__heart">
+            <i class="far fa-heart"></i></div>
+            {%- if section.settings.image != blank -%}
+            <img
+              srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | img_url: '165x' }} 165w,{%- endif -%}
+                        {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | img_url: '360x' }} 360w,{%- endif -%}
+                        {%- if section.settings.image.width >= 535 -%}{{ section.settings.image | img_url: '535x' }} 535w,{%- endif -%}
+                        {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | img_url: '750x' }} 750w,{%- endif -%}
+                        {%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | img_url: '1070x' }} 1070w,{%- endif -%}
+                        {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | img_url: '1500x' }} 1500w,{%- endif -%}"
+              src="{{ section.settings.image | img_url: '1500x' }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+              alt="{{ section.settings.image.alt | escape }}"
+              loading="lazy"
+              width="{{ section.settings.image.width }}"
+              height="{{ section.settings.image.height }}"
+              class="hero1__bg">
+            {%- else -%}
+            {{ 'image' | placeholder_svg_tag:
+            'placeholder-svg' }}
+            {%- endif -%}
           </div>
           <div class="collection1__product-info">
-            <div class="collection1__product-details"><span
-                class="collection1__product-title">Watch</span><span
-                class="collection1__product-price">$200</span>
+            <div class="collection1__product-details">
+              <span class="collection1__product-title">
+                {{ product.title }}
+              </span>
+              <span class="collection1__product-price">
+                  ${{ product.price }}
+              </span>
             </div>
-            <div class="collection1__sale-banner"><span
-                class="collection1__sale">sale</span></div>
+            <div class="collection1__sale-banner">
+              <span class="collection1__sale">sale</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="collection1__collection-item">
-          <div class="collection1__product-img">
-            <div class="collection1__heart"><i
-                class="far fa-heart"></i></div><img
-              src="https://www.pngkey.com/png/full/34-342528_breightling-watch-010516-womens-rolex-123015-analog-watch.png"
-              alt="product2">
-          </div>
-          <div class="collection1__product-info">
-            <div class="collection1__product-details"><span
-                class="collection1__product-title">Watch</span><span
-                class="collection1__product-price">$270</span>
-            </div>
-            <div class="collection1__sale-banner"><span
-                class="collection1__sale">sale</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="collection1__collection-item">
-          <div class="collection1__product-img">
-            <div class="collection1__heart"><i
-                class="far fa-heart"></i></div><img
-              src="https://www.pngkey.com/png/full/363-3632742_womens-summer-luxury-watches-audemars-piguet-royal-audemars.png"
-              alt="product3">
-          </div>
-          <div class="collection1__product-info">
-            <div class="collection1__product-details"><span
-                class="collection1__product-title">Watch</span><span
-                class="collection1__product-price">$250</span>
-            </div>
-            <div class="collection1__sale-banner"><span
-                class="collection1__sale">sale</span></div>
-          </div>
-        </div>
-      </div>
+      {%- endfor -%}
     </div>
   </div>
 </div>
@@ -136,9 +126,9 @@
       "label": "Hero Height"
     },
     {
-      "type": "image_picker",
-      "id": "image",
-      "label": "t:sections.image-with-text.settings.image.label"
+      "type": "collection", 
+      "id": "collection",
+      "label": "Featured Collection"
     },
     {
       "type": "color",

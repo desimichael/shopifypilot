@@ -17,6 +17,8 @@
             "type": "announcement",
             "settings": {
               "text": "50% OFF HALLOWEEN SALE",
+              "background_color": "#1d1c1b",
+              "announcement_text_color": "#ffffff",
               "link": "shopify:\/\/collections\/nike"
             }
           }
@@ -30,9 +32,11 @@
       "header": {
         "type": "header",
         "settings": {
+          "header_type": "header1",
           "logo_width": 100,
           "logo_position": "middle-left",
-          "menu": "main-menu"
+          "menu": "main-menu",
+          "menu_two": "main-menu"
         }
       },
       "footer": {

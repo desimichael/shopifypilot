@@ -754,7 +754,7 @@ table {
 	padding: 50px 0;
 }
 .collection2__product-img {
-	background: #e5e4e2;
+	background: #f1efee;
 	display: -moz-box;
 	display: flex;
 	-moz-box-pack: center;
@@ -763,9 +763,19 @@ table {
 	align-items: center;
 	height: 450px;
 	position: relative;
+	cursor: pointer;
+	overflow: hidden;
+}
+.collection2__product-img:hover img {
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	transform: scale(1.2);
 }
 .collection2__product-img img {
-	max-width: 40%;
+	max-width: 50%;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 .collection2__heart {
 	position: absolute;

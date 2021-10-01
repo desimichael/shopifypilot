@@ -1,106 +1,96 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "settings": {
-        "desktop_text_box_position": "flex-end"
-      },
+    "16331149888f8f0d55": {
+      "type": "hero-one",
       "blocks": {
-        "heading": {
+        "16331149888f8f0d55-0": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand"
+            "title": "Pilot",
+            "title_size": "xl"
           }
         },
-        "button": {
-          "type": "buttons",
+        "16331149888f8f0d55-1": {
+          "type": "paragraph",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_label_2": ""
+            "paragraph": "Example: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus aliquid maiores dignissimos ullam illo modi."
+          }
+        },
+        "16331149888f8f0d55-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "View More",
+            "button_link": "shopify:\/\/collections\/adidas"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
-      ]
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading"
-        },
-        "text": {
-          "type": "text"
-        },
-        "button": {
-          "type": "button"
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ]
-    },
-    "featured_products": {
-      "type": "featured-collection",
+        "16331149888f8f0d55-0",
+        "16331149888f8f0d55-1",
+        "16331149888f8f0d55-2"
+      ],
       "settings": {
-        "title": "Featured products",
-        "collection": "all",
-        "image_ratio": "square"
+        "hero_height": "100vh",
+        "image": "shopify:\/\/shop_images\/tie-clip.jpg",
+        "background": "#000000",
+        "opacity": 40,
+        "info_alignment": "center"
       }
     },
-    "collage": {
-      "type": "collage",
+    "16331155300c638830": {
+      "type": "hero-two",
+      "settings": {
+        "hero_height": "100vh",
+        "background1": "#000000",
+        "opacity1": 50,
+        "button_label1": "Label 1",
+        "button_link1": "",
+        "background2": "#000000",
+        "opacity2": 50,
+        "button_label2": "Label 2",
+        "button_link2": ""
+      }
+    },
+    "163311544991224bdb": {
+      "type": "hero-one",
       "blocks": {
-        "video": {
-          "type": "video"
+        "163311544991224bdb-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Title",
+            "title_size": "md"
+          }
         },
-        "product": {
-          "type": "product"
+        "163311544991224bdb-1": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "Example: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus aliquid maiores dignissimos ullam illo modi."
+          }
         },
-        "collection": {
-          "type": "collection"
+        "163311544991224bdb-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
-        "video",
-        "product",
-        "collection"
-      ]
-    },
-    "video": {
-      "type": "video"
-    },
-    "multi_column": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column"
-        },
-        "column2": {
-          "type": "column"
-        },
-        "column3": {
-          "type": "column"
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ]
+        "163311544991224bdb-0",
+        "163311544991224bdb-1",
+        "163311544991224bdb-2"
+      ],
+      "settings": {
+        "hero_height": "100vh",
+        "background": "#000000",
+        "opacity": 50,
+        "info_alignment": "center"
+      }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_products",
-    "collage",
-    "video",
-    "multi_column"
+    "16331149888f8f0d55",
+    "16331155300c638830",
+    "163311544991224bdb"
   ]
 }

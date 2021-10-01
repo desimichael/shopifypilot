@@ -59,33 +59,27 @@
         "163311544991224bdb-0": {
           "type": "heading",
           "settings": {
-            "title": "Title",
-            "title_size": "md"
-          }
-        },
-        "163311544991224bdb-1": {
-          "type": "paragraph",
-          "settings": {
-            "paragraph": "Example: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus aliquid maiores dignissimos ullam illo modi."
+            "title": "50% Off All New Watches",
+            "title_size": "sm"
           }
         },
         "163311544991224bdb-2": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
-            "button_link": ""
+            "button_label": "View More",
+            "button_link": "shopify:\/\/collections\/nike"
           }
         }
       },
       "block_order": [
         "163311544991224bdb-0",
-        "163311544991224bdb-1",
         "163311544991224bdb-2"
       ],
       "settings": {
-        "hero_height": "100vh",
-        "background": "#000000",
-        "opacity": 50,
+        "hero_height": "50vh",
+        "image": "shopify:\/\/shop_images\/watch-and-gloves-on-hand-pointing.jpg",
+        "background": "#0c33ee",
+        "opacity": 32,
         "info_alignment": "center"
       }
     }

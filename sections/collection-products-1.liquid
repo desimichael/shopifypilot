@@ -6,23 +6,23 @@
       limit: 6 -%}
       <div class="col-md-4">
         <div class="collection1__collection-item">
-          <div class="collection1__product-img">
+          <div class="collection1__product-img collection1__product-img--{{ section.settings.image_fit }}">
             <div class="collection1__heart">
             <i class="far fa-heart"></i></div>
-            {%- if section.settings.image != blank -%}
+            {%- if product.images[0] != blank -%}
             <img
-              srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | img_url: '165x' }} 165w,{%- endif -%}
-                        {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | img_url: '360x' }} 360w,{%- endif -%}
-                        {%- if section.settings.image.width >= 535 -%}{{ section.settings.image | img_url: '535x' }} 535w,{%- endif -%}
-                        {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | img_url: '750x' }} 750w,{%- endif -%}
-                        {%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | img_url: '1070x' }} 1070w,{%- endif -%}
-                        {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | img_url: '1500x' }} 1500w,{%- endif -%}"
-              src="{{ section.settings.image | img_url: '1500x' }}"
+              srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
+                        {%- if product.images[0].width >= 360 -%}{{ product.images[0] | img_url: '360x' }} 360w,{%- endif -%}
+                        {%- if product.images[0].width >= 535 -%}{{ product.images[0] | img_url: '535x' }} 535w,{%- endif -%}
+                        {%- if product.images[0].width >= 750 -%}{{ product.images[0] | img_url: '750x' }} 750w,{%- endif -%}
+                        {%- if product.images[0].width >= 1070 -%}{{ product.images[0] | img_url: '1070x' }} 1070w,{%- endif -%}
+                        {%- if product.images[0].width >= 1500 -%}{{ product.images[0] | img_url: '1500x' }} 1500w,{%- endif -%}"
+              src="{{ product.images[0] | img_url: '1500x' }}"
               sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-              alt="{{ section.settings.image.alt | escape }}"
+              alt="{{ product.images[0].alt | escape }}"
               loading="lazy"
-              width="{{ section.settings.image.width }}"
-              height="{{ section.settings.image.height }}"
+              width="{{ product.images[0].width }}"
+              height="{{ product.images[0].height }}"
               class="hero1__bg">
             {%- else -%}
             {{ 'image' | placeholder_svg_tag:
@@ -52,20 +52,20 @@
 
 
 <div class="hero hero1 hero1--aligned-{{ section.settings.info_alignment }} hero1--{{ section.settings.hero_height }}">
-    {%- if section.settings.image != blank -%}
+    {%- if product.images[0] != blank -%}
     <img
-      srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | img_url: '165x' }} 165w,{%- endif -%}
-        {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | img_url: '360x' }} 360w,{%- endif -%}
-        {%- if section.settings.image.width >= 535 -%}{{ section.settings.image | img_url: '535x' }} 535w,{%- endif -%}
-        {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | img_url: '750x' }} 750w,{%- endif -%}
-        {%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | img_url: '1070x' }} 1070w,{%- endif -%}
-        {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | img_url: '1500x' }} 1500w,{%- endif -%}"
-      src="{{ section.settings.image | img_url: '1500x' }}"
+      srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
+        {%- if product.images[0].width >= 360 -%}{{ product.images[0] | img_url: '360x' }} 360w,{%- endif -%}
+        {%- if product.images[0].width >= 535 -%}{{ product.images[0] | img_url: '535x' }} 535w,{%- endif -%}
+        {%- if product.images[0].width >= 750 -%}{{ product.images[0] | img_url: '750x' }} 750w,{%- endif -%}
+        {%- if product.images[0].width >= 1070 -%}{{ product.images[0] | img_url: '1070x' }} 1070w,{%- endif -%}
+        {%- if product.images[0].width >= 1500 -%}{{ product.images[0] | img_url: '1500x' }} 1500w,{%- endif -%}"
+      src="{{ product.images[0] | img_url: '1500x' }}"
       sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-      alt="{{ section.settings.image.alt | escape }}"
+      alt="{{ product.images[0].alt | escape }}"
       loading="lazy" 
-      width="{{ section.settings.image.width }}"
-      height="{{ section.settings.image.height }}"
+      width="{{ product.images[0].width }}"
+      height="{{ product.images[0].height }}"
       class="hero1__bg">
     {%- else -%}
     {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -98,7 +98,7 @@
 
 {% schema %}
 {
-  "name": "Collection Group Single",
+  "name": "Collection Products 1",
   "class": "spaced-section spaced-section--full-width",
   "settings": [
     {
@@ -129,6 +129,22 @@
       "type": "collection", 
       "id": "collection",
       "label": "Featured Collection"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ],
+      "default": "cover",
+      "label": "Product Image Fit"
     },
     {
       "type": "color",
@@ -239,7 +255,7 @@
   ],
   "presets": [
     {
-      "name": "Collection Group Single",
+      "name": "Collection Products 1",
       "blocks": [
         {
           "type": "heading"

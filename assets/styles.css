@@ -674,6 +674,9 @@ table {
 .collection1 {
 	padding: 50px 0;
 }
+.collection1 div[class*="col-"] {
+	margin-bottom: 1rem;
+}
 .collection1__product-img {
 	background: #f1efee;
 	display: -moz-box;
@@ -682,10 +685,16 @@ table {
 	justify-content: center;
 	-moz-box-align: center;
 	align-items: center;
-	height: 400px;
+	height: 450px;
 	position: relative;
 	cursor: pointer;
 	overflow: hidden;
+}
+.collection1__product-img--cover img {
+	object-fit: cover;
+}
+.collection1__product-img--contain img {
+	object-fit: contain;
 }
 .collection1__product-img:hover img {
 	-webkit-transform: scale(1.2);
@@ -693,7 +702,7 @@ table {
 	transform: scale(1.2);
 }
 .collection1__product-img img {
-	max-width: 50%;
+	max-width: 70%;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;

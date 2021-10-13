@@ -8,7 +8,13 @@
         <div class="collection1__collection-item">
           <div class="collection1__product-img collection1__product-img--{{ section.settings.image_fit }}">
             <div class="collection1__heart">
-            <i class="far fa-heart"></i></div>
+              <i class="far fa-heart"></i>
+            </div>
+            <div className="collection1__sale-banner">
+              <span className="collection1__sale">
+                sale
+              </span>
+            </div>
             {%- if product.images[0] != blank -%}
             <img
               srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
@@ -38,8 +44,13 @@
                   ${{ product.price }}
               </span>
             </div>
-            <div class="collection1__sale-banner">
-              <span class="collection1__sale">sale</span>
+            <div className="collection1__colors">
+              <div
+                className="collection1__color collection1__color--red">
+              </div>
+              <div
+                className="collection1__color collection1__color--blue">
+              </div>
             </div>
           </div>
         </div>

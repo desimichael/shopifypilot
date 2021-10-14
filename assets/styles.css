@@ -682,10 +682,23 @@ table {
 	justify-content: center;
 	-moz-box-align: center;
 	align-items: center;
-	height: 550px;
+	height: 450px;
 	position: relative;
 	cursor: pointer;
 	overflow: hidden;
+}
+.collection1__product-img .img-link {
+	display: block;
+	width: 70%;
+	height: 100%;
+}
+.collection1__product-img img {
+	max-width: 70%;
+	margin-bottom: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	z-index: 1;
 }
 .collection1__product-img--cover img {
 	object-fit: cover;
@@ -697,13 +710,6 @@ table {
 	-webkit-transform: scale(1.2);
 	-moz-transform: scale(1.2);
 	transform: scale(1.2);
-}
-.collection1__product-img img {
-	max-width: 60%;
-	margin-bottom: 15px;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
 }
 .collection1__heart {
 	position: absolute;
@@ -719,6 +725,7 @@ table {
 	align-items: center;
 	top: 10px;
 	right: 15px;
+	z-index: 2;
 }
 .collection1__heart .fa-heart {
 	font-size: 1.2rem;
@@ -756,6 +763,7 @@ table {
 }
 .collection1__sale--active {
 	visibility: visible;
+	z-index: 2;
 }
 .collection1__product-info {
 	display: -moz-box;
@@ -820,10 +828,18 @@ table {
 	justify-content: center;
 	-moz-box-align: center;
 	align-items: center;
-	height: 550px;
+	height: 450px;
 	position: relative;
 	cursor: pointer;
 	overflow: hidden;
+}
+.collection2__product-img img {
+	max-width: 70%;
+	margin-bottom: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	z-index: 1;
 }
 .collection2__product-img--cover img {
 	object-fit: cover;
@@ -835,13 +851,6 @@ table {
 	-webkit-transform: scale(1.2);
 	-moz-transform: scale(1.2);
 	transform: scale(1.2);
-}
-.collection2__product-img img {
-	max-width: 45%;
-	margin-bottom: 15px;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
 }
 .collection2__heart {
 	position: absolute;
@@ -857,6 +866,7 @@ table {
 	align-items: center;
 	top: 10px;
 	right: 15px;
+	z-index: 2;
 }
 .collection2__heart .fa-heart {
 	font-size: 1.2rem;
@@ -894,6 +904,7 @@ table {
 }
 .collection2__sale--active {
 	visibility: visible;
+	z-index: 2;
 }
 .collection2__product-info {
 	display: -moz-box;

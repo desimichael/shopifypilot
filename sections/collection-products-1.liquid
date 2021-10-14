@@ -3,33 +3,37 @@
     <div class="row">
       {%- for product in
       section.settings.collection.products
-      limit: 6 -%}
-      <div class="col-md-4">
+      limit: section.settings.total_products -%}
+      <div class="{{ section.settings.xxl-col }} {{ section.settings.xl-col }} {{ section.settings.lg-col }} {{ section.settings.md-col }} {{ section.settings.sm-col }}">
         <div class="collection1__collection-item">
-          <div class="collection1__product-img collection1__product-img--{{ section.settings.image_fit }}">
+        {% assign opacity = section.settings.opacity | divided_by: 100.00 %}
+          <div class="collection1__product-img collection1__product-img--{{ section.settings.image_fit }}"
+          style=" background-color: {{ section.settings.background | color_modify: 'alpha', opacity }}">
             <div class="collection1__heart">
               <i class="far fa-heart"></i>
             </div>
-            <div className="collection1__sale-banner">
-              <span className="collection1__sale">
+            <div class="collection1__sale-banner">
+              <span class="collection1__sale">
                 sale
               </span>
             </div>
             {%- if product.images[0] != blank -%}
-            <img
-              srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
-                        {%- if product.images[0].width >= 360 -%}{{ product.images[0] | img_url: '360x' }} 360w,{%- endif -%}
-                        {%- if product.images[0].width >= 535 -%}{{ product.images[0] | img_url: '535x' }} 535w,{%- endif -%}
-                        {%- if product.images[0].width >= 750 -%}{{ product.images[0] | img_url: '750x' }} 750w,{%- endif -%}
-                        {%- if product.images[0].width >= 1070 -%}{{ product.images[0] | img_url: '1070x' }} 1070w,{%- endif -%}
-                        {%- if product.images[0].width >= 1500 -%}{{ product.images[0] | img_url: '1500x' }} 1500w,{%- endif -%}"
-              src="{{ product.images[0] | img_url: '1500x' }}"
-              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-              alt="{{ product.images[0].alt | escape }}"
-              loading="lazy"
-              width="{{ product.images[0].width }}"
-              height="{{ product.images[0].height }}"
-              class="hero1__bg">
+             <a href="{{ product.url }}" class="img-link">
+                <img srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
+                    {%- if product.images[0].width >= 360 -%}{{ product.images[0] | img_url: '360x' }} 360w,{%- endif -%}
+                    {%- if product.images[0].width >= 535 -%}{{ product.images[0] | img_url: '535x' }} 535w,{%- endif -%}
+                    {%- if product.images[0].width >= 750 -%}{{ product.images[0] | img_url: '750x' }} 750w,{%- endif -%}
+                    {%- if product.images[0].width >= 1070 -%}{{ product.images[0] | img_url: '1070x' }} 1070w,{%- endif -%}
+                    {%- if product.images[0].width >= 1500 -%}{{ product.images[0] | img_url: '1500x' }} 1500w,{%- endif -%}"
+                  src="{{ product.images[0] | img_url: '1500x' }}"
+                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                  alt="{{ product.images[0].alt | escape }}"
+                  loading="lazy"
+                  width="{{ product.images[0].width }}"
+                  height="{{ product.images[0].height }}"
+                  class="hero1__bg"
+                >
+              </a>
             {%- else -%}
             {{ 'image' | placeholder_svg_tag:
             'placeholder-svg' }}
@@ -37,20 +41,20 @@
           </div>
           <div class="collection1__product-info">
             <div class="collection1__product-details">
-              <span class="collection1__product-title">
-                {{ product.title }}
-              </span>
-              <span class="collection1__product-price">
-                  ${{ product.price }}
-              </span>
+              {% if section.settings.show_title == true %}
+                <span class="collection1__product-title">
+                  {{ product.title }}
+                </span>
+              {% endif %}
+              {% if section.settings.show_price == true %}
+                <span class="collection1__product-price">
+                    ${{ product.price }}
+                </span>
+              {% endif %}
             </div>
-            <div className="collection1__colors">
-              <div
-                className="collection1__color collection1__color--red">
-              </div>
-              <div
-                className="collection1__color collection1__color--blue">
-              </div>
+            <div class="collection1__colors">
+              <div class="collection1__color collection1__color--red"></div>
+              <div class="collection1__color collection1__color--blue"></div>
             </div>
           </div>
         </div>
@@ -62,223 +66,224 @@
 
 
 
-<div class="hero hero1 hero1--aligned-{{ section.settings.info_alignment }} hero1--{{ section.settings.hero_height }}">
-    {%- if product.images[0] != blank -%}
-    <img
-      srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
-        {%- if product.images[0].width >= 360 -%}{{ product.images[0] | img_url: '360x' }} 360w,{%- endif -%}
-        {%- if product.images[0].width >= 535 -%}{{ product.images[0] | img_url: '535x' }} 535w,{%- endif -%}
-        {%- if product.images[0].width >= 750 -%}{{ product.images[0] | img_url: '750x' }} 750w,{%- endif -%}
-        {%- if product.images[0].width >= 1070 -%}{{ product.images[0] | img_url: '1070x' }} 1070w,{%- endif -%}
-        {%- if product.images[0].width >= 1500 -%}{{ product.images[0] | img_url: '1500x' }} 1500w,{%- endif -%}"
-      src="{{ product.images[0] | img_url: '1500x' }}"
-      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-      alt="{{ product.images[0].alt | escape }}"
-      loading="lazy" 
-      width="{{ product.images[0].width }}"
-      height="{{ product.images[0].height }}"
-      class="hero1__bg">
-    {%- else -%}
-    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-    {%- endif -%}
-  {% assign opacity = section.settings.opacity | divided_by: 100.00 %}
-  <div class="hero1__content-container" style=" background-color: {{ section.settings.background | color_modify: 'alpha', opacity }} ">
-    <div class="hero1__info">
-      {%- for block in section.blocks -%}
-        {% case block.type %}
-          {%- when 'heading' -%}
-            <h1 class="hero1__title hero1__title--{{ block.settings.title_size }} ">
-              {{ block.settings.title | escape }}
-            </h1>
-            </h2>
-          {%- when 'paragraph' -%}
-            <p class="hero1__paragraph">
-              {{ block.settings.paragraph | escape }}
-            </p>
-          {%- when 'button' -%}
-            {%- if block.settings.button_label != blank -%}
-              <a href="{{ block.settings.button_link }}" class="hero1__button" {{ block.shopify_attributes }}>
-                {{ block.settings.button_label | escape }}
-              </a>
-            {%- endif -%}
-        {%- endcase -%}
-      {%- endfor -%}
-    </div>
-  </div>
-</div>
 
 {% schema %}
 {
-  "name": "Collection Products 1",
-  "class": "spaced-section spaced-section--full-width",
-  "settings": [
-    {
-      "type": "select",
-      "id": "hero_height",
-      "options": [
+	"name": "Collection Products 1",
+	"class": "spaced-section spaced-section--full-width",
+	"settings": [{
+			"type": "select",
+			"id": "hero_height",
+			"options": [{
+					"value": "25vh",
+					"label": "25%"
+				},
+				{
+					"value": "50vh",
+					"label": "50%"
+				},
+				{
+					"value": "75vh",
+					"label": "75%"
+				},
+				{
+					"value": "100vh",
+					"label": "100%"
+				}
+			],
+			"default": "100vh",
+			"label": "Hero Height"
+		},
+		{
+			"type": "collection",
+			"id": "collection",
+			"label": "Featured Collection"
+		},
+		{
+			"type": "select",
+			"id": "image_fit",
+			"options": [
         {
-          "value": "25vh",
-          "label": "25%"
-        },
+					"value": "cover",
+					"label": "Cover"
+				},
+				{
+					"value": "contain",
+					"label": "Contain"
+				}
+			],
+			"default": "cover",
+			"label": "Product Image Fit"
+		},
+		{
+			"type": "select",
+			"id": "total_products",
+			"options": [
         {
-          "value": "50vh",
-          "label": "50%"
-        },
-        {
-          "value": "75vh",
-          "label": "75%"
-        },
-        {
-          "value": "100vh",
-          "label": "100%"
-        }
-      ],
-      "default": "100vh",
-      "label": "Hero Height"
-    },
-    {
-      "type": "collection", 
-      "id": "collection",
-      "label": "Featured Collection"
-    },
-    {
-      "type": "select",
-      "id": "image_fit",
-      "options": [
-        {
-          "value": "cover",
-          "label": "Cover"
-        },
-        {
-          "value": "contain",
-          "label": "Contain"
-        }
-      ],
-      "default": "cover",
-      "label": "Product Image Fit"
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background",
-      "default": "#000000"
-    },
-    {
-      "type": "range",
-      "id": "opacity",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "label": "Opacity",
-      "default": 50
-    },
-    {
-      "type": "select",
-      "id": "info_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ],
-      "default": "center",
-      "label": "Info Alignment"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "heading",
-      "name": "t:sections.image-with-text.blocks.heading.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Title"
-        },
-        {
-          "type": "select",
-          "id": "title_size",
-          "options": [
-            {
-              "value": "sm",
-              "label": "Small"
-            },
-            {
-              "value": "md",
-              "label": "Medium"
-            },
-            {
-              "value": "lg",
-              "label": "Large"
-            },
-            {
-              "value": "xl",
-              "label": "Extra Large"
-            }
-          ],
-          "default": "md",
-          "label": "Font Size"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "name": "Paragraph",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "textarea",
-          "id": "paragraph",
-          "label": "Paragraph",
-          "default": "Example: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus aliquid maiores dignissimos ullam illo modi."
-        }
-      ]
-    },
-    {
-      "type": "button",
-      "name": "t:sections.image-with-text.blocks.button.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "button_label",
-          "default": "Button label",
-          "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
-          "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": "Link"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Collection Products 1",
-      "blocks": [
-        {
-          "type": "heading"
-        },
-        {
-          "type": "paragraph"
-        },
-        {
-          "type": "button"
-        }
-      ]
-    }
-  ]
+					"value": "4",
+					"label": "4"
+				},
+				{
+					"value": "8",
+					"label": "8"
+				},
+				{
+					"value": "12",
+					"label": "12"
+				},
+				{
+					"value": "16",
+					"label": "16"
+				}
+			],
+			"default": "8",
+			"label": "Total Products Shown"
+		},
+		{
+			"type": "color",
+			"id": "background",
+			"label": "Background",
+			"default": "#dcdcdc"
+		},
+		{
+			"type": "range",
+			"id": "opacity",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"label": "Color Opacity",
+			"default": 50
+		},
+		{
+			"type": "checkbox",
+			"id": "show_title",
+			"label": "Show Title",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_price",
+			"label": "Show Price",
+			"default": true
+		},
+		{
+			"type": "select",
+			"id": "xxl-col",
+			"options": [{
+					"value": "col-xxl-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-xxl-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-xxl-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-xxl-2",
+					"label": "6 Columns"
+				}
+			],
+			"default": "col-xxl-3",
+			"label": "2XL Devices"
+		},
+		{
+			"type": "select",
+			"id": "xl-col",
+			"options": [{
+					"value": "col-xl-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-xl-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-xl-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-xl-2",
+					"label": "6 Columns"
+				}
+			],
+			"default": "col-xl-3",
+			"label": "XL Devices"
+		},
+		{
+			"type": "select",
+			"id": "lg-col",
+			"options": [{
+					"value": "col-lg-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-lg-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-lg-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-lg-2",
+					"label": "6 Columns"
+				}
+			],
+			"default": "col-lg-3",
+			"label": "Large Devices"
+		},
+		{
+			"type": "select",
+			"id": "md-col",
+			"options": [{
+					"value": "col-md-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-md-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-md-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-md-2",
+					"label": "6 Columns"
+				}
+			],
+			"default": "col-md-4",
+			"label": "Medium Devices"
+		},
+		{
+			"type": "select",
+			"id": "sm-col",
+			"options": [{
+					"value": "col-sm-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-sm-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-sm-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-sm-2",
+					"label": "6 Columns"
+				}
+			],
+			"default": "col-sm-6",
+			"label": "Small Devices"
+		}
+	],
+	"presets": [{
+		"name": "Collection Products 1"
+	}]
 }
 {% endschema %}

@@ -1,3 +1,101 @@
+	<div className="collection collection1">
+		<div className="container">
+			<div className="row">
+				<div className="col-md-4">
+					<div className="collection1__collection-item">
+						<div className="collection1__heart">
+							<i className="far fa-heart"></i>
+						</div>
+						<div className="collection1__sale-banner">
+							<span className="collection1__sale">
+								sale
+							</span>
+						</div>
+						<div className="collection1__product-img">
+							<img src="https://www.pngkey.com/png/full/134-1346637_classic-rose-gold-watch-radley-watch-rose-gold.png" alt="product1"
+								/>
+						</div>
+						<div className="collection1__product-info">
+							<div className="collection1__product-details">
+								<span className="collection1__product-title">
+									WATCH
+								</span>
+								<span className="collection1__product-price">
+									$200
+								</span>
+							</div>
+							<div className="collection1__colors">
+								<div className="collection1__color collection1__color--red"></div>
+								<div className="collection1__color collection1__color--blue"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="col-md-4">
+					<div className="collection1__collection-item">
+						<div className="collection1__product-img">
+							<div className="collection1__heart">
+								<i className="far fa-heart"></i>
+							</div>
+							<div className="collection1__sale-banner">
+								<span className="collection1__sale">
+									sale
+								</span>
+							</div>
+							<img src="https://www.pngkey.com/png/full/34-342528_breightling-watch-010516-womens-rolex-123015-analog-watch.png" alt="product2" />
+						</div>
+						<div className="collection1__product-info">
+							<div className="collection1__product-details">
+								<span className="collection1__product-title">
+									WATCH
+								</span>
+								<span className="collection1__product-price">
+									$270
+								</span>
+							</div>
+							<div className="collection1__colors">
+								<div className="collection1__color collection1__color--red"></div>
+								<div className="collection1__color collection1__color--green"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="col-md-4">
+					<div className="collection1__collection-item">
+						<div className="collection1__heart">
+							<i className="far fa-heart"></i>
+						</div>
+						<div className="collection1__sale-banner">
+							<span className="collection1__sale collection1__sale--active">
+								sale
+							</span>
+						</div>
+						<div className="collection1__product-img collection1__product-img--rectangle">
+							<img src="https://www.pngkey.com/png/full/363-3632742_womens-summer-luxury-watches-audemars-piguet-royal-audemars.png" alt="product3" />
+						</div>
+						<div className="collection1__product-info">
+							<div className="collection1__product-details">
+								<span className="collection1__product-title">
+									CHRONO GUNMETAL TAN
+								</span>
+								<span className="collection1__product-price">
+									$250
+								</span>
+							</div>
+							<div className="collection1__colors">
+								<div className="collection1__color collection1__color--orange"></div>
+								<div className="collection1__color collection1__color--green"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
 <div class="collection collection1">
   <div class="container">
     <div class="row">
@@ -7,16 +105,18 @@
       <div class="{{ section.settings.xxl-col }} {{ section.settings.xl-col }} {{ section.settings.lg-col }} {{ section.settings.md-col }} {{ section.settings.sm-col }}">
         <div class="collection1__collection-item">
         {% assign opacity = section.settings.opacity | divided_by: 100.00 %}
-          <div class="collection1__product-img collection1__product-img--{{ section.settings.image_fit }}"
+					<div class="collection1__heart">
+						<i class="far fa-heart"></i>
+					</div>
+					<div class="collection1__sale-banner">
+						<span class="collection1__sale">
+							sale
+						</span>
+					</div>
+          <div class="collection1__product-img 
+					collection1__product-img--{{ section.settings.container_shape }}"
+					collection1__product-img--{{ section.settings.image_fit }}"
           style=" background-color: {{ section.settings.background | color_modify: 'alpha', opacity }}">
-            <div class="collection1__heart">
-              <i class="far fa-heart"></i>
-            </div>
-            <div class="collection1__sale-banner">
-              <span class="collection1__sale">
-                sale
-              </span>
-            </div>
             {%- if product.images[0] != blank -%}
              <a href="{{ product.url }}" class="img-link">
                 <img srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
@@ -98,6 +198,26 @@
 			"type": "collection",
 			"id": "collection",
 			"label": "Featured Collection"
+		},
+		{
+			"type": "select",
+			"id": "container_shape",
+			"options": [
+        {
+					"value": "rectangle",
+					"label": "Rectangle"
+				},
+				{
+					"value": "square",
+					"label": "Square"
+				},
+				{
+					"value": "circle",
+					"label": "Circle"
+				}
+			],
+			"default": "rectangle",
+			"label": "Product Container Shape"
 		},
 		{
 			"type": "select",

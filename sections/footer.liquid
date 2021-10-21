@@ -14,6 +14,146 @@
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
 
+
+<footer class="footer">
+  <div class="footer__newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer__newsletter-info">
+            <span>
+              Sign up to our newsletter<br>
+              <p>
+                for the latest 
+                <strong>news</strong> 
+                and
+                <strong>exclusive</strong> 
+                deals.
+              </p>
+            </span>
+            <div class="footer__newsletter-input-section">
+              <input type="text" 
+              class="footer__newsletter-input"
+              name="email_newsletter" placeholder="YOUR EMAIL ADDRESS">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="footer__links">
+              <div class="footer__column-title">
+                Contact Us
+              </div>
+              <a href="#"
+                class="footer__link">
+                Link
+              </a>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="footer__links">
+              <div class="footer__column-title">
+                Shop
+              </div>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="footer__links">
+              <div class="footer__column-title">
+                Customer Service
+              </div>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+              <a href="#" class="footer__link">
+                Link
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="footer__extra">
+          <span class="footer__column-title">
+            join the vip club
+          </span>
+          <input type="text" name="email_vip"
+            class="footer__input"
+            placeholder="YOUR EMAIL ADDRESS">
+          <div class="footer__social-icons">
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-instagram"></i> 
+            </a>
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="footer__social-link">
+              <i class="fab fa-pinterest-p"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer__bottom">
+          <div class="footer__copyright">
+            Pilot Timepieces © Copyright 2021, All Rights Reserved.
+          </div>
+          <div class="footer__extra-links">
+            <a href="#">
+            Terms &amp; Conditions
+            </a>
+            <a href="#">
+              Privacy Policy
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
 <footer class="footer color-{{ section.settings.color_scheme }} gradient">
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
     <div class="footer__content-top page-width">

@@ -23,117 +23,104 @@
       <div class="row">
         <div class="col-md-9">
           <div class="row">
-            <div class="col-md-3">
+            {%- for block in section.blocks -%}
+            <div class="col-md-2">
               <div class="footer__links">
-                <div class="footer__column-title">Contact Us
-                </div><a href="#"
-                   class="footer__link">Link</a><a href="#"
-                   class="footer__link">Link</a><a href="#"
-                   class="footer__link">Link</a><a href="#"
-                   class="footer__link">Link</a>
+                <div class="footer__column-title">
+                  {{ block.settings.heading }}
+                </div>
+                {%- for link in block.settings.menu.links -%}
+                  <a href="{{ link.url }}" class="footer__link">
+                    {{ link.title }}
+                  </a>
+                {%- endfor -%}
               </div>
             </div>
-            <div class="col-md-3">
-              <div class="footer__links">
-                <div class="footer__column-title">Shop</div>
-                <a href="#" class="footer__link">Link</a><a
-                   href="#" class="footer__link">Link</a><a
-                   href="#" class="footer__link">Link</a><a
-                   href="#" class="footer__link">Link</a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="footer__links">
-                <div class="footer__column-title">Customer
-                  Service</div><a href="#"
-                   class="footer__link">Link</a><a href="#"
-                   class="footer__link">Link</a><a href="#"
-                   class="footer__link">Link</a><a href="#"
-                   class="footer__link">Link</a>
-              </div>
-            </div>
+            {%- endfor -%}
           </div>
         </div>
         <div class="col-md-3">
           <div class="footer__extra">
-            <div class="footer__column-title">
-              Sign Up For The Newsletter
-            </div>
-            {%- form 'customer' -%}
-            <input type="hidden" name="contact[tags]"
-                   value="newsletter">
-            <div class="newsletter-form__field-wrapper">
-              <div class="field">
-                <input
-                       type="email"
-                       name="contact[email]"
-                       class="footer__input"
-                       value="{{ form.email }}"
-                       aria-required="true"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       autocomplete="email"
-                       {% if form.errors %}
-                       autofocus
-                       aria-invalid="true"
-                       aria-describedby="ContactFooter-error"
-                       {% elsif form.posted_successfully? %}
-                       aria-describedby="ContactFooter-success"
-                       {% endif %}
-                       placeholder="UserEmail@Company.Com"
-                       required>
+            {% if section.settings.newsletter_enable != false %}
+            <span class="footer__column-title">
+              {{ section.settings.newsletter_heading }}
+            </span>
+              {%- form 'customer' -%}
+              <input type="hidden" name="contact[tags]"
+                    value="newsletter">
+              <div class="newsletter-form__field-wrapper">
+                <div class="field">
+                  <input
+                        type="email"
+                        name="contact[email]"
+                        class="footer__input"
+                        value="{{ form.email }}"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        autocomplete="email"
+                        {% if form.errors %}
+                        autofocus
+                        aria-invalid="true"
+                        aria-describedby="ContactFooter-error"
+                        {% elsif form.posted_successfully? %}
+                        aria-describedby="ContactFooter-success"
+                        {% endif %}
+                        placeholder="UserEmail@Company.Com"
+                        required>
+                </div>
+                {%- if form.errors -%}
+                <small class="newsletter-form__message form__message"
+                      id="ContactFooter-error">{% render
+                  'icon-error'
+                  %}{{ form.errors.translated_fields['email']
+                  | capitalize
+                  }}
+                  {{ form.errors.messages['email'] }}</small>
+                {%- endif -%}
               </div>
-              {%- if form.errors -%}
-              <small class="newsletter-form__message form__message"
-                     id="ContactFooter-error">{% render
-                'icon-error'
-                %}{{ form.errors.translated_fields['email']
-                | capitalize
-                }}
-                {{ form.errors.messages['email'] }}</small>
+              <button type="submit" name="commit">
+                {{ 'newsletter.button_label' | t }}
+              </button>
+              {%- if form.posted_successfully? -%}
+              <h3 style="color: green; font-size: .9rem; text-transform: uppercase;" >
+                {{ 'newsletter.success' | t }}
+              </h3>
               {%- endif -%}
-            </div>
-            <button type="submit" name="commit">
-              {{ 'newsletter.button_label' | t }}
-            </button>
-            {%- if form.posted_successfully? -%}
-            <h3 class="newsletter-form__message newsletter-form__message--success form__message"
-                id="ContactFooter-success" tabindex="-1"
-                autofocus>
-              {% render 'icon-success' %}
-              {{ 'newsletter.success' | t }}
-            </h3>
-            {%- endif -%}
-            {%- endform -%}
+              {%- endform -%}
+            {% endif %}
             <span>
-              <p>Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Animi ipsam minus
-                praesentium dolor placeat voluptatum quidem?
-                Facere libero alias incidunt nesciunt,
-                asperiores, amet cumque adipisci dignissimos
-                corporis, beatae hic minima.
+              <p>
+                {{ section.settings.footer_p }}
               </p>
             </span>
-            <div class="footer__social-icons"><a href="#"
-                 class="footer__social-link"><i
-                   class="fab fa-twitter"></i></a><a
-                 href="#" class="footer__social-link"><i
-                   class="fab fa-instagram"></i> </a><a
-                 href="#" class="footer__social-link"><i
-                   class="fab fa-facebook-f"></i></a><a
-                 href="#" class="footer__social-link"><i
-                   class="fab fa-pinterest-p"></i></a></div>
+            {% if section.settings.show_social != false %}
+              <div class="footer__social-icons"><a href="#"
+                   class="footer__social-link"><i
+                     class="fab fa-twitter"></i></a><a
+                   href="#" class="footer__social-link"><i
+                     class="fab fa-instagram"></i> </a><a
+                   href="#" class="footer__social-link"><i
+                     class="fab fa-facebook-f"></i></a><a
+                   href="#" class="footer__social-link"><i
+                     class="fab fa-pinterest-p"></i></a>
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
           <div class="footer__bottom">
-            <div class="footer__copyright">Pilot Timepieces
-              © Copyright 2021, All Rights Reserved.</div>
-            <div class="footer__extra-links"><a
-                 href="#">Terms &amp; Conditions</a><a
-                 href="#">Privacy Policy</a></div>
+            <div class="footer__copyright">
+              © {{ shop.name }}
+              {{ 'now' | date: "%Y" }},
+               All Rights Reserved.
+            </div>
+            <div class="footer__extra-links">
+              {%- for link in section.settings.footer_bottom_menu.links -%}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+              {%- endfor -%}
           </div>
         </div>
       </div>
@@ -166,95 +153,14 @@
           "info": "t:sections.footer.blocks.link_list.settings.menu.info"
         }
       ]
-    },
-    {
-      "type": "text",
-      "name": "t:sections.footer.blocks.text.name",
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "default": "Heading",
-          "label": "t:sections.footer.blocks.text.settings.heading.label"
-        },
-        {
-          "type": "richtext",
-          "id": "subtext",
-          "default": "<p>Share store details, promotions, or brand content with your customers.</p>",
-          "label": "t:sections.footer.blocks.text.settings.subtext.label"
-        }
-      ]
-    },
-    {
-      "type": "image",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "range",
-          "id": "image_width",
-          "min": 50,
-          "max": 200,
-          "step": 5,
-          "unit": "px",
-          "label": "Image width",
-          "default": 100
-        },
-        {
-          "type": "select",
-          "id": "alignment",
-          "label": "Image alignment on large screen",
-          "options": [
-            {
-              "value": "",
-              "label": "Left"
-            },
-            {
-              "value": "center",
-              "label": "Center"
-            },
-            {
-              "value": "right",
-              "label": "Right"
-            }
-          ],
-          "default": "center"
-        }
-      ]
     }
   ],
   "settings": [
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.footer.settings.color_scheme.options__1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.footer.settings.color_scheme.options__2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.footer.settings.color_scheme.options__3.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.footer.settings.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.footer.settings.color_scheme.options__5.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.footer.settings.color_scheme.label"
+      "type": "textarea",
+      "id": "footer_p",
+      "label": "Extra Info",
+      "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsam minus praesentium dolor placeat voluptatum quidem?"
     },
     {
       "type": "header",
@@ -285,45 +191,15 @@
       "label": "t:sections.footer.settings.show_social.label"
     },
     {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__3.content",
-      "info": "t:sections.footer.settings.header__4.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_country_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_country_selector.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__5.content",
-      "info": "t:sections.footer.settings.header__6.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_language_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_language_selector.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__7.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "payment_enable",
-      "default": true,
-      "label": "t:sections.footer.settings.payment_enable.label"
+      "type": "link_list",
+      "id": "footer_bottom_menu",
+      "label": "Footer Bottom Menu"
     }
   ],
   "default": {
     "blocks": [
       {
         "type": "link_list"
-      },
-      {
-        "type": "text"
       }
     ]
   }

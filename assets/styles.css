@@ -1156,7 +1156,7 @@ table {
 }
 .footer {
 	background: #dcdcdc;
-	padding: 0 0 50px;
+	padding: 50px 0;
 }
 .footer__links {
 	display: -moz-box;
@@ -1166,12 +1166,11 @@ table {
 	flex-direction: column;
 }
 .footer__column-title {
-	font-size: 0.9rem;
+	font-size: 0.7rem;
 	color: #333;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 0.5rem;
-	padding-top: 20px;
 }
 .footer__link {
 	color: #333;
@@ -1236,18 +1235,24 @@ table {
 }
 .footer__bottom {
 	border-top: 1px solid #333;
-	padding: 20px 0 0;
 	display: -moz-box;
 	display: flex;
+	-moz-box-align: center;
+	align-items: center;
 	-moz-box-pack: justify;
 	justify-content: space-between;
 }
-.footer__copyright,
+.footer__copyright {
+	color: #333;
+	font-size: 0.8rem;
+	margin-top: 1rem;
+}
+.footer__extra-links {
+	margin-top: 1rem;
+}
 .footer__extra-links a {
 	color: #333;
 	font-size: 0.8rem;
-}
-.footer__extra-links a {
 	text-decoration: none;
 	padding: 0 15px;
 }

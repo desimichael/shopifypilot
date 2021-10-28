@@ -94,7 +94,8 @@
                 {{ section.settings.footer_p }}
               </p>
             </span>
-            {% if settings.show_social != false %}
+            
+            {% if section.settings.show_social != false %}
               <div class="footer__social-icons">
                 {% if settings.social_twitter_link != blank %}
                   <a href="{{ settings.social_twitter_link }}" class="footer__social-link">

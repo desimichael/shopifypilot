@@ -51,17 +51,12 @@
           }
         },
         "block_order": [
-          "footer-0",
-          "footer-1"
+          "footer-0"
         ],
         "settings": {
-          "color_scheme": "background-1",
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
-          "show_social": false,
-          "enable_country_selector": true,
-          "enable_language_selector": true,
-          "payment_enable": true
+          "show_social": false
         }
       }
     },
@@ -87,7 +82,6 @@
             "announcement-bar-0": {
               "type": "announcement",
               "settings": {
-                "color_scheme": "background-1"
               }
             }
           },

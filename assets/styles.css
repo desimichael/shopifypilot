@@ -136,7 +136,7 @@ table {
 	justify-content: space-between;
 	-moz-box-align: center;
 	align-items: center;
-	color: #fefefe;
+	color: #fff;
 	background: #333;
 	padding: 0 10px;
 	height: 84px;
@@ -145,7 +145,7 @@ table {
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: 500;
-	color: #fefefe;
+	color: #fff;
 }
 .header1 a:hover {
 	color: #333;
@@ -179,8 +179,8 @@ table {
 	left: 0;
 	padding: 15px 0;
 	background: #c6c6c6;
-	-webkit-box-shadow: #fefefe;
-	box-shadow: #fefefe;
+	-webkit-box-shadow: #fff;
+	box-shadow: #fff;
 	min-width: 150px;
 }
 .header1__collection-link .collection-link__sub-links a {
@@ -193,7 +193,7 @@ table {
 	.collection-link__sub-links
 	a:hover {
 	color: #333;
-	background: #fefefe;
+	background: #fff;
 }
 .header1__collection-link:hover
 	.collection-link__sub-links {
@@ -218,13 +218,13 @@ table {
 	-moz-box-pack: justify;
 	justify-content: space-between;
 	padding: 20px 10px;
-	color: #fefefe;
+	color: #fff;
 	background: #333;
 }
 .header2 a {
 	text-decoration: none;
 	text-transform: uppercase;
-	color: #fefefe;
+	color: #fff;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
@@ -270,8 +270,8 @@ table {
 	left: 0;
 	padding: 15px 0;
 	background: #c6c6c6;
-	-webkit-box-shadow: #fefefe;
-	box-shadow: #fefefe;
+	-webkit-box-shadow: #fff;
+	box-shadow: #fff;
 	min-width: 150px;
 }
 .header2__collection-link .collection-link__sub-links a {
@@ -284,7 +284,7 @@ table {
 	.collection-link__sub-links
 	a:hover {
 	color: #333;
-	background: #fefefe;
+	background: #fff;
 }
 .header2__collection-link:hover
 	.collection-link__sub-links {
@@ -299,13 +299,13 @@ table {
 	-moz-box-align: center;
 	align-items: center;
 	padding: 20px 10px;
-	color: #fefefe;
+	color: #fff;
 	background: #333;
 }
 .header3 a {
 	text-decoration: none;
 	text-transform: uppercase;
-	color: #fefefe;
+	color: #fff;
 }
 .header3 a:hover {
 	color: #c6c6c6;
@@ -342,8 +342,8 @@ table {
 	left: 0;
 	padding: 15px 0;
 	background: #c6c6c6;
-	-webkit-box-shadow: #fefefe;
-	box-shadow: #fefefe;
+	-webkit-box-shadow: #fff;
+	box-shadow: #fff;
 	min-width: 150px;
 }
 .header3__collection-link .collection-link__sub-links a {
@@ -356,7 +356,7 @@ table {
 	.collection-link__sub-links
 	a:hover {
 	color: #333;
-	background: #fefefe;
+	background: #fff;
 }
 .header3__collection-link:hover
 	.collection-link__sub-links {
@@ -473,7 +473,7 @@ table {
 .hero1__button {
 	width: 150px;
 	color: #333;
-	background-color: #fefefe;
+	background-color: #fff;
 	padding: 15px 30px;
 	text-align: center;
 	text-decoration: none;
@@ -481,7 +481,7 @@ table {
 	font-size: 0.9rem;
 }
 .hero1__button:hover {
-	color: #fefefe;
+	color: #fff;
 	background: #333;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -530,7 +530,7 @@ table {
 .hero2__content-container {
 	top: 0;
 	left: 0;
-	color: #fefefe;
+	color: #fff;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 3;
 	display: -moz-box;
@@ -566,9 +566,9 @@ table {
 }
 .hero2__button {
 	width: 150px;
-	color: #fefefe;
+	color: #fff;
 	background-color: transparent;
-	border: 3px solid #fefefe;
+	border: 3px solid #fff;
 	padding: 15px 30px;
 	text-align: center;
 	text-decoration: none;
@@ -580,7 +580,7 @@ table {
 	transition: all 0.3s ease-in-out;
 }
 .hero2__button:hover {
-	color: #fefefe;
+	color: #fff;
 	background: #333;
 }
 .hero3 {
@@ -607,7 +607,7 @@ table {
 .hero3__content-container {
 	top: 0;
 	left: 0;
-	color: #fefefe;
+	color: #fff;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 3;
 	display: -moz-box;
@@ -642,7 +642,7 @@ table {
 }
 .hero3__title {
 	font-size: 4.5rem;
-	color: #fefefe;
+	color: #fff;
 	text-transform: capitalize;
 	font-family: Lobster Two, cursive;
 }
@@ -665,7 +665,7 @@ table {
 }
 .hero3__button {
 	width: 150px;
-	color: #fefefe;
+	color: #fff;
 	background-color: #333;
 	padding: 15px 30px;
 	text-align: center;
@@ -675,7 +675,7 @@ table {
 }
 .hero3__button:hover {
 	color: #333;
-	background: #fefefe;
+	background: #fff;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
@@ -707,7 +707,7 @@ table {
 }
 .collection1__cart .fa-opencart {
 	font-size: 1.2rem;
-	color: #fefefe;
+	color: #fff;
 	padding: 7px;
 	cursor: pointer;
 	-webkit-transition: all 0.5s ease-in-out;
@@ -737,7 +737,7 @@ table {
 	padding: 2px 10px;
 	border-radius: 3px;
 	background: #333;
-	color: #fefefe;
+	color: #fff;
 	visibility: hidden;
 }
 .collection1__sale--active {
@@ -745,7 +745,7 @@ table {
 	z-index: 2;
 }
 .collection1__product-img {
-	background: #fefefe;
+	background: #fff;
 	display: -moz-box;
 	display: flex;
 	-moz-box-pack: center;
@@ -862,7 +862,7 @@ table {
 }
 .collection2__cart .fa-opencart {
 	font-size: 1.2rem;
-	color: #fefefe;
+	color: #fff;
 	padding: 7px;
 	cursor: pointer;
 	-webkit-transition: all 0.5s ease-in-out;
@@ -1002,7 +1002,7 @@ table {
 .collection3__cart {
 	position: absolute;
 	background: #333;
-	color: #f8f8ff;
+	color: #fff;
 	height: 40px;
 	width: 40px;
 	border-radius: 50%;
@@ -1106,7 +1106,7 @@ table {
 	padding: 2px 10px;
 	border-radius: 3px;
 	background: #36454f;
-	color: #f5f5f5;
+	color: #fff;
 	visibility: hidden;
 }
 .collection3__sale--active {
@@ -1179,7 +1179,7 @@ table {
 	margin-bottom: 0.5rem;
 }
 .footer__link:hover {
-	color: #fefefe;
+	color: #fff;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
@@ -1209,7 +1209,7 @@ table {
 	margin-bottom: 1rem;
 }
 .footer button:hover {
-	color: #fefefe;
+	color: #fff;
 	background: #333;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -1228,7 +1228,7 @@ table {
 	color: #333;
 }
 .footer__social-link:hover {
-	color: #fefefe;
+	color: #fff;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
@@ -1257,7 +1257,7 @@ table {
 	padding: 0 15px;
 }
 .footer__extra-links a:hover {
-	color: #fefefe;
+	color: #fff;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
@@ -6980,7 +6980,7 @@ body {
 	background: transparent;
 }
 .fixed-nav.transparent-nav .header a {
-	color: #fefefe;
+	color: #fff;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;

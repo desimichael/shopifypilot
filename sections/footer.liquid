@@ -94,29 +94,28 @@
                 {{ section.settings.footer_p }}
               </p>
             </span>
-            
             {% if section.settings.show_social != false %}
               <div class="footer__social-icons">
-                {% if settings.social_twitter_link != blank %}
+                {%- if settings.social_twitter_link != blank -%}
                   <a href="{{ settings.social_twitter_link }}" class="footer__social-link">
                     <i class="fab fa-twitter"></i>
                   </a>
-                {% endif %}
-                {% if settings.social_instagram_link != blank %}
+                {%- endif -%}
+                {%- if settings.social_instagram_link != blank -%}
                   <a href="{{ settings.social_instagram_link }}" class="footer__social-link">
                     <i class="fab fa-instagram"></i>
                   </a>
-                {% endif %}
-                {% if settings.social_facebook_link != blank %}
+                {%- endif -%}
+                {%- if settings.social_facebook_link != blank -%}
                   <a href="{{ settings.social_facebook_link }}" class="footer__social-link">
                     <i class="fab fa-facebook-f"></i>
                   </a>
-                {% endif %}
-                {% if settings.social_pinterest_link != blank %}
+                {%- endif -%}
+                {%- if settings.social_pinterest_link != blank -%}
                   <a href="{{ settings.social_pinterest_link }}" class="footer__social-link">
                     <i class="fab fa-pinterest-p"></i>
                   </a>
-                {% endif %}
+                {%- endif -%}
               </div>
             {% endif %}
           </div>

@@ -1,0 +1,134 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "subtitle": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "subtitle",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "16355276631923ad7a": {
+      "type": "hero-two",
+      "settings": {
+        "hero_height": "50vh",
+        "image1": "shopify:\/\/shop_images\/putting-on-your-shoes.jpg",
+        "background1": "#121212",
+        "opacity1": 38,
+        "button_label1": "Men",
+        "button_link1": "shopify:\/\/collections\/vans",
+        "image2": "shopify:\/\/shop_images\/womens-led-shoes.jpg",
+        "background2": "#121212",
+        "opacity2": 38,
+        "button_label2": "Women",
+        "button_link2": "shopify:\/\/collections\/women"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "1635527657a8fc45f6": {
+      "type": "collection-products-1",
+      "settings": {
+        "hero_height": "100vh",
+        "collection": "vans",
+        "total_products": 4,
+        "container_shape": "square",
+        "image_fit": "contain",
+        "background": "#ffffff",
+        "opacity": 100,
+        "show_title": true,
+        "show_price": true,
+        "xxl-col": "col-xxl-3",
+        "xl-col": "col-xl-4",
+        "lg-col": "col-lg-4",
+        "md-col": "col-md-6",
+        "sm-col": "col-sm-6"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16355276631923ad7a",
+    "product-recommendations",
+    "1635527657a8fc45f6"
+  ]
+}

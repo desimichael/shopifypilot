@@ -37,6 +37,47 @@
         "info_alignment": "center"
       }
     },
+    "16357803321bdabc80": {
+      "type": "collection-group",
+      "blocks": {
+        "16357803321bdabc80-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "16357803321bdabc80-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "16357803321bdabc80-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "16357803321bdabc80-0",
+        "16357803321bdabc80-1",
+        "16357803321bdabc80-2"
+      ],
+      "settings": {
+        "hero_height": "100vh",
+        "container_shape": "rectangle",
+        "image_fit": "contain",
+        "background": "#f8f8ff",
+        "opacity": 50,
+        "show_title": true,
+        "xxl-col": "col-xxl-4",
+        "xl-col": "col-xl-4",
+        "lg-col": "col-lg-4",
+        "md-col": "col-md-4",
+        "sm-col": "col-sm-2"
+      }
+    },
     "16331155300c638830": {
       "type": "hero-two",
       "settings": {
@@ -51,6 +92,74 @@
         "opacity2": 21,
         "button_label2": "Women",
         "button_link2": "shopify:\/\/collections\/women"
+      }
+    },
+    "16357803472fa554c1": {
+      "type": "collection-products-1",
+      "settings": {
+        "hero_height": "100vh",
+        "collection": "",
+        "total_products": 16,
+        "container_shape": "rectangle",
+        "image_fit": "contain",
+        "background": "#dcdcdc",
+        "opacity": 50,
+        "show_title": true,
+        "show_price": true,
+        "xxl-col": "col-xxl-3",
+        "xl-col": "col-xl-4",
+        "lg-col": "col-lg-4",
+        "md-col": "col-md-6",
+        "sm-col": "col-sm-6"
+      }
+    },
+    "1635780307a2d1e767": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "collection": "",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "1635780389544d0da8": {
+      "type": "hero-two",
+      "settings": {
+        "hero_height": "100vh",
+        "background1": "#000000",
+        "opacity1": 50,
+        "button_label1": "Label 1",
+        "button_link1": "",
+        "background2": "#000000",
+        "opacity2": 50,
+        "button_label2": "Label 2",
+        "button_link2": ""
+      }
+    },
+    "1635781529403473b2": {
+      "type": "collection-products-1",
+      "settings": {
+        "hero_height": "100vh",
+        "collection": "",
+        "total_products": 16,
+        "container_shape": "rectangle",
+        "image_fit": "contain",
+        "background": "#dcdcdc",
+        "opacity": 50,
+        "show_title": true,
+        "show_price": true,
+        "xxl-col": "col-xxl-3",
+        "xl-col": "col-xl-4",
+        "lg-col": "col-lg-4",
+        "md-col": "col-md-6",
+        "sm-col": "col-sm-6"
       }
     },
     "163311544991224bdb": {
@@ -86,7 +195,12 @@
   },
   "order": [
     "16331149888f8f0d55",
+    "16357803321bdabc80",
     "16331155300c638830",
+    "16357803472fa554c1",
+    "1635780307a2d1e767",
+    "1635780389544d0da8",
+    "1635781529403473b2",
     "163311544991224bdb"
   ]
 }

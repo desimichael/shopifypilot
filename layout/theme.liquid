@@ -37,6 +37,7 @@
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
+  
 
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
@@ -108,8 +109,110 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700;900&family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet" />
+
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    {{ 'vendors.css' | asset_url | stylesheet_tag }}
+
+    {% style %}
+    :root {
+    --body-bg: {{ settings.body_bg }};
+    --announce-bar-default: #333333;
+    }
+    
+    body {
+      background-color: var(--body-bg);
+    }
+    
+    .fixed-nav.transparent-nav .header {
+    background: transparent;
+    }
+    
+    .fixed-nav.transparent-nav .header a {
+    color: #fff;
+    transition: all .3s ease-in-out;
+    }
+    
+    .fixed-nav.transparent-nav .header a:hover {
+    color: #c6c6c6;
+    }
+    
+    .fixed-nav.transparent-nav .header .header1__collection-link
+    .collection-link__sub-links a,
+    .fixed-nav.transparent-nav .header .header2__collection-link
+    .collection-link__sub-links a,
+    .fixed-nav.transparent-nav .header .header3__collection-link
+    .collection-link__sub-links a {
+    color: #333;
+    }
+    
+    .fixed-nav.transparent-nav .header .header1__collection-link
+    .collection-link__sub-links a:hover,
+    .fixed-nav.transparent-nav .header .header2__collection-link
+    .collection-link__sub-links a:hover,
+    .fixed-nav.transparent-nav .header .header3__collection-link
+    .collection-link__sub-links a:hover {
+    color: #333;
+    }
+    
+    .fixed-nav .header {
+    position: fixed;
+    width: 100%;
+    z-index: 30;
+    }
+    
+    @media(max-width: 1199px) {
+    .collection1__product-title {
+    font-size: 1rem;
+    }
+    
+    .collection3__product-title {
+    font-size: .7rem;
+    }
+    
+    .collection3__product-img {
+    height: 450px
+    }
+    
+    .collection1__product-img img {
+    max-width: 65%;
+    }
+    
+    .collection3__cart {
+    height: 30px;
+    width: 30px;
+    top: 6px;
+    right: 10px;
+    }
+    
+    .collection3__cart .fa-opencart {
+    font-size: 1rem;
+    }
+    }
+    
+    @media(max-width: 991px) {
+    .collection1__product-title {
+    font-size: 1rem;
+    }
+    
+    .collection2__product-title {
+    font-size: 1rem;
+    }
+    
+    .collection3__product-title {
+    font-size: .8rem;
+    }
+    }
+    
+    @media(max-width: 575px) {
+    
+    .collection1__product-img--circle,
+    .collection1__product-img--square {
+    width: 240px;
+    height: 240px;
+    margin: 3.5rem auto;
+    }
+    }
+    {% endstyle %}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -125,7 +228,7 @@
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   </head>
 
-  <body class="fixed-nav transparent-nav">
+  <body class="fixed-nav transparent-nav" style="background: var(--body-bg);">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>

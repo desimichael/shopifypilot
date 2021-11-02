@@ -12,6 +12,17 @@
     "settings": [
       {
         "type": "header",
+        "content": "Global Styles"
+      },
+      {
+        "type": "color",
+        "id": "body_bg",
+        "default": "#EEEEEE",
+        "label": "Body Background",
+        "info": "The websites global background"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"
       },
       {

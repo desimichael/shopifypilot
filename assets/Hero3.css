@@ -1,33 +1,35 @@
-.hero1 {
+.hero3 {
 	position: relative;
+	height: 100vh;
 	width: 100%;
 	overflow: hidden;
 	margin-bottom: 50px;
 }
-.hero1--25vh {
-	height: 25vh;
-}
-.hero1--50vh {
-	height: 50vh;
-}
-.hero1--75vh {
-	height: 75vh;
-}
-.hero1--100vh {
-	height: 100vh;
-}
-.hero1--aligned-left .hero1__content-container {
+.hero3--aligned-left .hero3__content-container {
 	justify-content: flex-start;
 	padding-left: 10rem;
 }
-.hero1--aligned-center .hero1__content-container {
+.hero3--aligned-center .hero3__content-container {
 	justify-content: center;
 }
-.hero1--aligned-right .hero1__content-container {
+.hero3--aligned-right .hero3__content-container {
 	justify-content: flex-end;
 	padding-right: 10rem;
 }
-.hero1__bg {
+.hero3__content-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hero3__bg {
 	position: absolute;
 	-o-object-fit: cover;
 	object-fit: cover;
@@ -37,61 +39,48 @@
 	height: 100%;
 	z-index: 1;
 }
-.hero1__content-container {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	z-index: 2;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.hero1__info {
+.hero3__info {
 	max-width: 400px;
-	color: #f8f8ff;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-.hero1__title {
-	color: #f8f8ff;
+.hero3__title {
 	font-size: 4.5rem;
+	color: #fff;
 	text-transform: capitalize;
 	font-family: "Lobster Two", cursive;
 }
-.hero1__title--sm {
+.hero3__title--sm {
 	font-size: 2rem;
 }
-.hero1__title--md {
+.hero3__title--md {
 	font-size: 3rem;
 }
-.hero1__title--lg {
+.hero3__title--lg {
 	font-size: 4.5rem;
 }
-.hero1__title--xl {
+.hero3__title--xl {
 	font-size: 6rem;
 }
-.hero1__paragraph {
+.hero3__paragraph {
 	margin-bottom: 2rem;
 	font-weight: 300;
 	line-height: 1.5;
 }
-.hero1__button {
+.hero3__button {
 	width: 150px;
-	color: #333;
-	background-color: #fff;
+	color: #fff;
+	background-color: #333;
 	padding: 15px 30px;
 	text-align: center;
 	text-decoration: none;
 	font-weight: 700;
 	font-size: 0.9rem;
-	transition: all 0.3s ease-in-out;
 }
-.hero1__button:hover {
-	color: #fff;
-	background: #333;
+.hero3__button:hover {
+	color: #333;
+	background: #fff;
+	transition: all 0.3s ease-in-out;
 }

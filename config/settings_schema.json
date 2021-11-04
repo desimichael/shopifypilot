@@ -8,35 +8,24 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
-    "name": "t:settings_schema.colors.name",
+    "name": "Header Settings",
     "settings": [
 			{
 				"type": "header",
-				"content": "Global Styles"
-			},
-			{
-				"type": "color",
-				"id": "body_bg",
-				"default": "#EEEEEE",
-				"label": "Body Background",
-				"info": "The websites global background"
+				"content": "Header Options"
 			},
       {
-        "type": "text",
-        "label": "Header Background Options"
-      },	
-			{
-				"type": "checkbox",
-				"id": "header_solid_bg",
-				"label": "Solid Background",
-				"default": true
-			},
-			{
-				"type": "checkbox",
-				"id": "header_transparent_bg",
-				"label": "Transparent Background",
-				"default": false
-			},
+        "type": "checkbox",
+        "id": "header_solid_bg",
+        "label": "Solid Background",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "header_transparent_bg",
+        "label": "Transparent Background",
+        "default": false
+      },
 			{
 				"type": "color",
 				"id": "header_background",
@@ -52,6 +41,22 @@
 				"label": "Header Solid Opacity",
 				"default": 100,
 				"info": "Choose lighter or darker color"
+			}
+		]
+  },
+  {
+    "name": "t:settings_schema.colors.name",
+    "settings": [
+			{
+				"type": "header",
+				"content": "Global Styles"
+			},
+			{
+				"type": "color",
+				"id": "body_bg",
+				"default": "#EEEEEE",
+				"label": "Body Background",
+				"info": "The websites global background"
 			},
 			{
 				"type": "color",

@@ -117,13 +117,13 @@
       {%- if section.settings.menu != blank -%}
       {%- for link in section.settings.menu.links -%}
           {%- if link.links == blank -%} 
-            <li class="header1__collection-link">
+            <li class="header2__collection-link">
               <a href="{{ link.url }}">
                 {{ link.title | escape }}
               </a>
             </li>
           {%- else -%}
-            <li class="header1__collection-link">
+            <li class="header2__collection-link">
               <a href="{{ link.url }}">
                 {{ link.title | escape }}
                 <i class="fas fa-chevron-down"></i>
@@ -219,12 +219,36 @@
       </li>
     </ul>
   </header>
-
 {% endcase %}
 
+<script>
+  // Get body element
+  const bodyTag = document.getElementsByTagName('body')[0];
+  const headerWrapper = document.getElementById('shopify-section-header');
 
+  // Check for class fixed-nav
+  if(bodyTag.classList.contains('fixed-nav')) {
+    // Changed style of header wrapper
+    headerWrapper.style.position = 'fixed';
+    headerWrapper.style.top = '0';
+    headerWrapper.style.left = '0';
+    headerWrapper.style.width = '100%';
+    headerWrapper.style.zIndex = '9999';
+  
+    // If class fixed-nav exists, remove transparent-nav on scroll
+    const onScroll = () => {
+      const scrollLocation = document.documentElement.scrollTop;
+      
+      if(scrollLocation > 50) {
+        bodyTag.classList.remove('transparent-nav');
+      } else {
+        bodyTag.classList.add('transparent-nav');
+      }
+    }
 
-
+    window.addEventListener('scroll', onScroll);
+  }
+</script>
 
 
 {% schema %}

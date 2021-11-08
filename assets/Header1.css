@@ -6,6 +6,7 @@
 	background: #000;
 	padding: 0 10px;
 	height: 84px;
+	transition: all 0.3s ease-in-out;
 }
 .header1 a {
 	text-decoration: none;
@@ -28,7 +29,6 @@
 .header1__collection-link {
 	display: inline-block;
 	position: relative;
-	transition: all 0.3s ease-in-out;
 }
 .header1__collection-link i {
 	margin-left: 5px;
@@ -67,4 +67,17 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.header1 .hamburger {
+	display: none;
+	padding: 5px;
+	cursor: pointer;
+}
+.header1 .hamburger .bar {
+	background: #fff;
+	display: block;
+	width: 30px;
+	height: 3px;
+	margin: 5px auto;
+	transition: all 0.3s ease-in-out;
 }

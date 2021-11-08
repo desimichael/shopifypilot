@@ -12,20 +12,21 @@
     "settings": [
 			{
 				"type": "header",
-				"content": "Header Options"
+				"content": "Global Header Options"
 			},
-      {
-        "type": "checkbox",
-        "id": "header_solid_bg",
-        "label": "Solid Background",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "header_transparent_bg",
-        "label": "Transparent Background",
-        "default": false
-      },
+			{
+				"type": "checkbox",
+				"id": "header_transparent_bg",
+				"label": "Transparent Background",
+				"default": true
+			},
+			{
+				"type": "checkbox",
+				"id": "sticky_header",
+				"label": "Sticky Header",
+				"default": false,
+				"info": "Header Stays On Top"
+			},
 			{
 				"type": "color",
 				"id": "header_background",

@@ -49,6 +49,11 @@
       {%- endif -%}
     </a>
   </div>
+  <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
     <ul class="header1__collections-nav">
     {%- if section.settings.menu != blank -%}
     {%- for link in section.settings.menu.links -%}
@@ -142,6 +147,11 @@
       {%- endfor -%}
       {%- endif -%}
     </ul>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
     <div class="header2__collections-nav">
       <a href="{{ routes.cart_url }}">
       <i class="fas fa-shopping-cart"></i>
@@ -177,6 +187,11 @@
         {{ shop.name }}
       {%- endif -%}
     </a>
+    </div>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
     <ul class="header3__collections-nav">
       {%- if section.settings.menu != blank -%}
@@ -222,32 +237,36 @@
 {% endcase %}
 
 <script>
+  console.log('Loaded Javascript from Header');
   // Get body element
-  const bodyTag = document.getElementsByTagName('body')[0];
-  const headerWrapper = document.getElementById('shopify-section-header');
+const bodyTag = document.getElementsByTagName('body')[0];
+const headerWrapper = document.getElementById('shopify-section-header');
 
-  // Check for class fixed-nav
-  if(bodyTag.classList.contains('fixed-nav')) {
-    // Changed style of header wrapper
-    headerWrapper.style.position = 'fixed';
-    headerWrapper.style.top = '0';
-    headerWrapper.style.left = '0';
-    headerWrapper.style.width = '100%';
-    headerWrapper.style.zIndex = '9999';
-  
-    // If class fixed-nav exists, remove transparent-nav on scroll
-    const onScroll = () => {
-      const scrollLocation = document.documentElement.scrollTop;
-      
-      if(scrollLocation > 50) {
-        bodyTag.classList.remove('transparent-nav');
-      } else {
-        bodyTag.classList.add('transparent-nav');
-      }
+
+  // Check for fixed-nav class
+if (bodyTag.classList.contains('fixed-nav') &&
+bodyTag.classList.contains('transparent-nav')) {
+  // Change styles of header wrapper
+  headerWrapper.style.position = 'fixed';
+  headerWrapper.style.top = '0';
+  headerWrapper.style.left = '0';
+  headerWrapper.style.width = '100%';
+  headerWrapper.style.zIndex = '9999';
+
+
+  // Remove class of transparent bg on scroll
+  const onScroll = () => {
+    const scrollLocation = document.documentElement.scrollTop;
+
+    if (scrollLocation > 50) {
+      bodyTag.classList.remove('transparent-nav');
+    } else {
+      bodyTag.classList.add('transparent-nav');
     }
-
-    window.addEventListener('scroll', onScroll);
   }
+
+  window.addEventListener('scroll', onScroll);
+}
 </script>
 
 

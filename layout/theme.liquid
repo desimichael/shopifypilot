@@ -228,7 +228,10 @@
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   </head>
 
-  <body class="fixed-nav transparent-nav" style="background: var(--body-bg);">
+  <body class=" {% if settings.header_transparent_bg == true %}
+    transparent-nav {% endif %} 
+  {% if settings.sticky_header == true  %} fixed-nav {% endif %}"
+    style="background: var(--body-bg);">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>

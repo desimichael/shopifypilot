@@ -1410,7 +1410,7 @@ table {
 }
 .footer__social-link {
 	display: block;
-	padding: 15px;
+	padding: 5px;
 	color: #333;
 	-webkit-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
@@ -7555,6 +7555,55 @@ progress {
 	color: #333;
 }
 .fixed-nav .hamburger {
+	display: none;
+}
+.transparent-nav .header {
+	background: transparent;
+	position: absolute;
+	width: 100%;
+	z-index: 30;
+}
+.transparent-nav .header a {
+	color: #fff;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.transparent-nav .header a:hover {
+	color: #d3d3d3;
+}
+.transparent-nav
+	.header
+	.header1__collection-link
+	.collection-link__sub-links
+	a,
+.transparent-nav
+	.header
+	.header1__collection-link
+	.collection-link__sub-links
+	a:hover,
+.transparent-nav
+	.header
+	.header2__collection-link
+	.collection-link__sub-links
+	a,
+.transparent-nav
+	.header
+	.header2__collection-link
+	.collection-link__sub-links
+	a:hover,
+.transparent-nav
+	.header
+	.header3__collection-link
+	.collection-link__sub-links
+	a,
+.transparent-nav
+	.header
+	.header3__collection-link
+	.collection-link__sub-links
+	a:hover {
+	color: #333;
+}
+.hamburger {
 	display: none;
 }
 @media (max-width: 1199px) {

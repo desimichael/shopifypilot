@@ -234,7 +234,7 @@
   </header>
 {% endcase %}
 
-<script>
+<!-- <script>
   console.log('Loaded Javascript from Header');
   // Get body element
 const bodyTag = document.getElementsByTagName('body')[0];
@@ -265,6 +265,40 @@ bodyTag.classList.contains('transparent-nav')) {
 
   window.addEventListener('scroll', onScroll);
 }
+</script> -->
+
+<script src="{{ 'zepto.min.js' | asset_url }}"></script>
+
+<script>
+  // Get body element
+  const bodyTag = $('body');
+  const headerWrapper = $('#shopify-section-header');
+
+
+  // Check for fixed-nav class
+  if (bodyTag.hasClass('fixed-nav')) {
+    // Change styles of header wrapper
+    headerWrapper.css('position', 'fixed');
+    headerWrapper.css('top', 0);
+    headerWrapper.css('left', 0);
+    headerWrapper.css('width', '100%');
+    headerWrapper.css('z-index', '9999');
+
+    if(bodyTag.hasClass('transparent-nav')) {
+    // Remove class of transparent bg on scroll
+      const onScroll = () => {
+        const scrollLocation = document.documentElement.scrollTop;
+
+        if (scrollLocation > 5) {
+          bodyTag.removeClass('transparent-nav');
+        } else {
+          bodyTag.addClass('transparent-nav');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll);
+    }
+  }
 </script>
 
 
@@ -298,6 +332,12 @@ bodyTag.classList.contains('transparent-nav')) {
       "label": "t:sections.header.settings.logo.label"
     },
     {
+    "type": "color",
+    "id": "header_background_color",
+    "label": "Header Background",
+    "default": "#ff6347"
+    },
+    {
       "type": "range",
       "id": "logo_width",
       "min": 50,
@@ -306,26 +346,6 @@ bodyTag.classList.contains('transparent-nav')) {
       "default": 100,
       "unit": "t:sections.header.settings.logo_width.unit",
       "label": "t:sections.header.settings.logo_width.label"
-    },
-    {
-      "type": "select",
-      "id": "logo_position",
-      "options": [
-        {
-          "value": "middle-left",
-          "label": "t:sections.header.settings.logo_position.options__1.label"
-        },
-        {
-          "value": "top-left",
-          "label": "t:sections.header.settings.logo_position.options__2.label"
-        },
-        {
-          "value": "top-center",
-          "label": "t:sections.header.settings.logo_position.options__3.label"
-        }
-      ],
-      "default": "middle-left",
-      "label": "t:sections.header.settings.logo_position.label"
     },
     {
       "type": "link_list",

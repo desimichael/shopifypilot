@@ -12,7 +12,14 @@
     "settings": [
 			{
 				"type": "header",
-				"content": "Global Header Options"
+				"content": "Global Styles"
+			},
+			{
+				"type": "color",
+				"id": "body_bg",
+				"default": "#EEEEEE",
+				"label": "Body Background",
+				"info": "The websites global background"
 			},
 			{
 				"type": "checkbox",
@@ -26,39 +33,12 @@
 				"label": "Sticky Header",
 				"default": false,
 				"info": "Header Stays On Top"
-			},
-			{
-				"type": "color",
-				"id": "header_background",
-				"label": "Header Solid Color",
-				"default": "#dcdcdc"
-			},
-			{
-				"type": "range",
-				"id": "header_opacity",
-				"min": 0,
-				"max": 100,
-				"step": 1,
-				"label": "Header Solid Opacity",
-				"default": 100,
-				"info": "Choose lighter or darker color"
 			}
 		]
   },
   {
     "name": "t:settings_schema.colors.name",
     "settings": [
-			{
-				"type": "header",
-				"content": "Global Styles"
-			},
-			{
-				"type": "color",
-				"id": "body_bg",
-				"default": "#EEEEEE",
-				"label": "Body Background",
-				"info": "The websites global background"
-			},
 			{
 				"type": "color",
 				"id": "colors_solid_button_labels",

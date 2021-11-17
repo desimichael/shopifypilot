@@ -5,6 +5,7 @@
 	padding: 15px 0;
 	font-size: 1.2rem;
 	font-weight: 700;
+	position: relative;
 	width: 100%;
 	color: #fefefe;
 	background-color: var(--announce-bar-default);

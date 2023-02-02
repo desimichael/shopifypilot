@@ -9,6 +9,7 @@
     "colors_background_2": "#F3F3F3",
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
+    "page_width": "1200",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -18,7 +19,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "header_type": "header1",
+          "header_type": "header3",
           "logo_width": 100,
           "logo_position": "middle-left",
           "menu": "main-menu",
@@ -40,13 +41,11 @@
           "footer-0"
         ],
         "settings": {
-          "color_scheme": "background-1",
+          "footer_p": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsam minus praesentium dolor placeat voluptatum quidem?",
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
-          "enable_country_selector": true,
-          "enable_language_selector": true,
-          "payment_enable": true
+          "footer_bottom_menu": ""
         }
       }
     },
